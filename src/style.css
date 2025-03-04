@@ -3,12 +3,27 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr minmax(min-content, 1280px) 1fr;
+  gap: 16px;
+  grid-template-areas: "left content right";
+}
+
+.recipes {
+  grid-area: content;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.recipe {
+  border: 1px solid #858585;
+  border-radius: 8px;
 }
