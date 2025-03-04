@@ -23,7 +23,29 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
+.show-more {
+  display: none;
+}
+
 .recipe {
   border: 1px solid #858585;
   border-radius: 8px;
+  padding: 16px;
+
+  &:has(.recipe__ingredient:nth-child(11)) {
+    .show-more {
+      display: block;
+    }
+  }
+}
+
+.recipe__ingredients {
+  list-style-type: none;
+  padding: 0;
+}
+
+.recipe__ingredient--label {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
 }
