@@ -19,6 +19,7 @@
 .recipes {
   grid-area: content;
   display: grid;
+  align-items: start;
   gap: 16px;
   grid-template-columns: repeat(3, 1fr);
 }
@@ -34,6 +35,30 @@
 
   &:has(.recipe__ingredient:nth-child(11)) {
     .show-more {
+      display: block;
+    }
+  }
+
+  .recipe__ingredient:nth-child(n + 11) {
+    display: none;
+  }
+
+  .show-more__less-link {
+    display: none;
+  }
+
+  &:target {
+    border-color: #ff0000;
+
+    .recipe__ingredient {
+      display: block;
+    }
+
+    .show-more__more-link {
+      display: none;
+    }
+
+    .show-more__less-link {
       display: block;
     }
   }
