@@ -24,14 +24,16 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
-.show-more {
-  display: none;
-}
-
-.recipe {
+.recipe__card {
   border: 1px solid #858585;
   border-radius: 8px;
   padding: 16px;
+}
+
+.recipe__card--recipe {
+  .show-more {
+    display: none;
+  }
 
   &:has(.recipe__ingredient:nth-child(11)) {
     .show-more {
@@ -73,4 +75,32 @@
   display: inline-flex;
   gap: 8px;
   align-items: center;
+}
+
+.recipe__card--method {
+  .recipe-method {
+    line-clamp: 10;
+  }
+
+  .visibility-checkbox {
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .visibility-checkbox:checked + .recipe-method {
+    line-clamp: unset;
+
+    + .show-more label {
+      &::after {
+        content: " less";
+      }
+    }
+  }
+
+  .show-more label {
+    &::after {
+      content: " more";
+    }
+  }
 }
