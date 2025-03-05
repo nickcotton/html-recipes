@@ -9,8 +9,9 @@
   <body>
     <main class="container">
       <div class="recipes">
-        <div id="recipe-1" class="recipe__card recipe__card--recipe">
+        <div class="recipe__card recipe__card--recipe">
           <h2>Simple Meat Lasagna Recipe</h2>
+          <input type="checkbox" class="visibility-checkbox" name="recipe-method" id="recipe-1">
           <ul class="recipe__ingredients">
             <li class="recipe__ingredient"><label><input type="checkbox">Ingredient</label></li>
             <li class="recipe__ingredient"><label><input type="checkbox">Ingredient</label></li>
@@ -24,12 +25,12 @@
             <li class="recipe__ingredient"><label><input type="checkbox">Ingredient</label></li>
           </ul>
           <p class="show-more">
-            <a href="#recipe-1" class="show-more__more-link">Show more</a>
-            <a href="#" class="show-more__less-link">Show less</a>
+            <label for="recipe-1">Show</label>
           </p>
         </div>
-        <div id="recipe-2" class="recipe__card recipe__card--recipe">
+        <div class="recipe__card recipe__card--recipe">
           <h2>Super Meat Lasagna Recipe</h2>
+          <input type="checkbox" class="visibility-checkbox" name="recipe-method" id="recipe-2">
           <ul class="recipe__ingredients">
             <li class="recipe__ingredient"><label><input type="checkbox">Ingredient</label></li>
             <li class="recipe__ingredient"><label><input type="checkbox">Ingredient</label></li>
@@ -53,8 +54,7 @@
             <li class="recipe__ingredient"><label><input type="checkbox">Ingredient</label></li>
           </ul>
           <p class="show-more">
-            <a href="#recipe-2" class="show-more__more-link">Show more</a>
-            <a href="#" class="show-more__less-link">Show less</a>
+            <label for="recipe-2">Show</label>
           </p>
         </div>
         <div class="recipe__card recipe__card--method">

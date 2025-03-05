@@ -28,6 +28,42 @@
   border: 1px solid #858585;
   border-radius: 8px;
   padding: 16px;
+
+  .recipe__ingredient:nth-child(n + 11) {
+    display: none;
+  }
+}
+
+.visibility-checkbox {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.recipe-method {
+  line-clamp: 10;
+}
+
+.show-more label {
+  &::after {
+    content: " more";
+  }
+}
+
+.visibility-checkbox:checked {
+  + .recipe-method {
+    line-clamp: unset;
+  }
+
+  ~ .show-more label {
+    &::after {
+      content: " less";
+    }
+  }
+
+  + .recipe__ingredients .recipe__ingredient {
+    display: block;
+  }
 }
 
 .recipe__card--recipe {
@@ -37,28 +73,6 @@
 
   &:has(.recipe__ingredient:nth-child(11)) {
     .show-more {
-      display: block;
-    }
-  }
-
-  .recipe__ingredient:nth-child(n + 11) {
-    display: none;
-  }
-
-  .show-more__less-link {
-    display: none;
-  }
-
-  &:target {
-    .recipe__ingredient {
-      display: block;
-    }
-
-    .show-more__more-link {
-      display: none;
-    }
-
-    .show-more__less-link {
       display: block;
     }
   }
@@ -73,32 +87,4 @@
   display: inline-flex;
   gap: 8px;
   align-items: center;
-}
-
-.recipe__card--method {
-  .recipe-method {
-    line-clamp: 10;
-  }
-
-  .visibility-checkbox {
-    opacity: 0;
-    position: absolute;
-    pointer-events: none;
-  }
-
-  .visibility-checkbox:checked + .recipe-method {
-    line-clamp: unset;
-
-    + .show-more label {
-      &::after {
-        content: " less";
-      }
-    }
-  }
-
-  .show-more label {
-    &::after {
-      content: " more";
-    }
-  }
 }
