@@ -50,8 +50,6 @@
   }
 
   &:target {
-    border-color: #ff0000;
-
     .recipe__ingredient {
       display: block;
     }
